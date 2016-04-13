@@ -1,5 +1,10 @@
 from django.shortcuts import render
 
+
+def home(request):
+    return render(request, '/index.html', {})
+
+
 # Для юзеров
 def user_list(request):
     return render(request, 'blog/post_list.html', {})
