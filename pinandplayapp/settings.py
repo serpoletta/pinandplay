@@ -76,16 +76,12 @@ WSGI_APPLICATION = 'pinandplayapp.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pinandplay',
-        'USER': 'web',
-        'PASSWORD': 'rOlhuq949',
-        'HOST': 'localhost',
-        'PORT': '',
+
+   'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -108,3 +104,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
+
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pinandplay',
+        'USER': 'web',
+        'PASSWORD': 'rOlhuq949',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+"""
