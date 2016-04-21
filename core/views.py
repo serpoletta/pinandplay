@@ -56,4 +56,4 @@ def card_edit(request, pk_board, pk_card):
 
 
 def index(request):
-    return render(request, '/index.html', {})
+    return render(request, 'tamplates/pinandplay/index.html', {}) #прописан путь о_о
