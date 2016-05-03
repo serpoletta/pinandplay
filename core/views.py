@@ -12,7 +12,7 @@ def user_list(request):
 
 
 def user_profile(request, pk):
-    return render(request, 'blog/post_list.html', {})
+    return render(request, 'pinandplay/user_profile.html', {})
 
 
 # Для досок
@@ -23,7 +23,7 @@ def board_list(request):
 
 
 def board_detail(request, pk):
-    return render(request, 'blog/post_list.html', {})
+    return render(request, 'pinandplay/board.html', {})
 
 
 def board_new(request):
@@ -42,7 +42,7 @@ def card_list(request, pk_board):
 
 
 def card_detail(request, pk_board, pk_card):
-    return render(request, 'blog/post_list.html', {})
+    return render(request, 'pinandplay/card.html', {})
 
 
 def card_new(request, pk_board):
@@ -56,4 +56,4 @@ def card_edit(request, pk_board, pk_card):
 
 
 def index(request):
-    return render(request, 'pinandplay/index.html', {}) #прописан путь о_о
+    return render(request, 'pinandplay/index.html', {})

@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <html lang="ru">
     <head>
     <meta charset="utf-8">
@@ -6,8 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Карточка {{cardname}} </title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="style/style.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'style/style.css' %}" rel="stylesheet">
     </head>
     
     <body> <div> <h1>ЗДЕСЬ БУДЕТ КОНКРЕТНАЯ КАРТОЧКА</h1></div> </body>
