@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'extuser',
+    'django.contrib.sites'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,6 +52,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+# Расширенная модель пользователя
+AUTH_USER_MODEL = 'extuser.ExtUser'
+SITE_ID=1
 
 ROOT_URLCONF = 'pinandplayapp.urls'
 
