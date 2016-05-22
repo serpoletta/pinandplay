@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import Board
 from django.contrib.auth.decorators import login_required
 from extuser.models import ExtUser
+
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 # Список досок юзера?
 # Пагинация?
 # Список некоторых рандомных досок?
@@ -12,15 +15,22 @@ from extuser.models import ExtUser
 def user_list(request):
     return render(request, 'blog/post_list.html', {})
 
-
 def user_profile(request, pk):
     user = ExtUser.objects.filter(pk=pk)
     boards = Board.objects.filter(owner=pk)
     return render(request, 'pinandplay/user_profile.html', {'user':user, 'boards': boards})
 
-def user_random(request):
+@login_required
+def home(request):
+    return HttpResponseRedirect(
+               reverse(user_random(),
+                       args=[request.user.pk]))
+
+@login_required
+def user_random(request, pk):
+    user = ExtUser.objects.filter(pk=pk)
     boards = Board.objects.all()[:15]
-    return render(request, 'pinandplay/user_random.html', {'boards': boards})
+    return render(request, 'pinandplay/user_random.html', {'user':user, 'boards': boards})
 
 # Для досок
 
