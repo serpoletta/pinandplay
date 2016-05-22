@@ -11,7 +11,7 @@ urlpatterns = [
     # ^user/(\d+)/edit/$
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^user_random/$', 'core.views.user_random', name='user_random'),
-    (r'^user_random/home', 'core.views.home'),
+    url(r'^user_random/home/$', 'core.views.home', name='home'),
 
     # Доски
     url(r'^board/$', 'core.views.board_list', name='board_list'),
