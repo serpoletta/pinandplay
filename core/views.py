@@ -1,5 +1,7 @@
 from django.shortcuts import render
-
+from .models import Board
+from django.contrib.auth.decorators import login_required
+from extuser.models import ExtUser
 # Список досок юзера?
 # Пагинация?
 # Список некоторых рандомных досок?
@@ -12,8 +14,13 @@ def user_list(request):
 
 
 def user_profile(request, pk):
-    return render(request, 'pinandplay/user_profile.html', {})
+    user = ExtUser.objects.filter(pk=pk)
+    boards = Board.objects.filter(owner=pk)
+    return render(request, 'pinandplay/user_profile.html', {'user':user, 'boards': boards})
 
+def user_random(request):
+    boards = Board.objects.all()[:15]
+    return render(request, 'pinandplay/user_random.html', {'boards': boards})
 
 # Для досок
 
@@ -25,11 +32,11 @@ def board_list(request):
 def board_detail(request, pk):
     return render(request, 'pinandplay/board.html', {})
 
-
+@login_required
 def board_new(request):
     return render(request, 'blog/post_list.html', {})
 
-
+@login_required
 def board_edit(request, pk):
     return render(request, 'blog/post_list.html', {})
 
@@ -44,11 +51,11 @@ def card_list(request, pk_board):
 def card_detail(request, pk_board, pk_card):
     return render(request, 'pinandplay/card.html', {})
 
-
+@login_required
 def card_new(request, pk_board):
     return render(request, 'blog/post_list.html', {})
 
-
+@login_required
 def card_edit(request, pk_board, pk_card):
     return render(request, 'blog/post_list.html', {})
 

@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^user/(\d+)/$', 'core.views.user_profile', name='user_profile'),
     # ^user/(\d+)/edit/$
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    url(r'^user_random/$', 'core.views.user_random', name='user_random'),
 
     # Доски
     url(r'^board/$', 'core.views.board_list', name='board_list'),
