@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <link href="css/bootstrap.css" rel="stylesheet"> 
-    <link href="style/style1.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'style/pages/style1.css' %}" rel="stylesheet">
 </head>
 <body>
 
     <div class="header">
         <div class="container text-center">
-            <img src="image/pando-05.jpg" class="img-responsive img-circle margin" style="display:inline" alt="octo" width="350" height="350">
+            <img src="{% static 'image/pando-05.jpg' %}" class="img-responsive img-circle margin" style="display:inline" alt="octo" width="350" height="350">
         <h1>Pin & Play!</h1>      
         <p>Save your lovely games in one place!</p>
         </div>

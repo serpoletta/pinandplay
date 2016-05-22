@@ -22,7 +22,7 @@ def user_profile(request, pk):
 
 @login_required
 def home(request):
-    return HttpResponseRedirect(reverse('home', args=[request.user.pk]))
+    return HttpResponseRedirect(reverse('home', args=[request.user.username]))
 
 @login_required
 def user_random(request, pk):

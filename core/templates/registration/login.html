@@ -11,7 +11,12 @@
     <link href="{% static 'style/style.css' %}" rel="stylesheet">
 </head>
     <body>
+     <div class="container-fluid text-center">
+      <img src="{% static 'image/pando-05.jpg' %}" class="img-responsive img-circle" style="display:inline" alt="octo" width="350" height="350">
+       <div class="cont pg2">
+        <h3 class="text-center">Welcome!</h3>
         <form role="form">
+           <h4 class="text-center">Регистрация</h4>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Введите email">
@@ -21,10 +26,23 @@
                 <label for="pass">Пароль</label>
                 <input type="password" class="form-control" id="pass" placeholder="Пароль">
             </div>
-            <div class="checkbox">
-                <label><input type="checkbox"> Чекбокс</label>
-            </div>
-            <button type="submit" class="btn btn-success">Войти</button>
+            <a href="../pinandplay/user_random.html" type="submit" class="btn btn-danger btn-md btn-block">Зарегистрироваться!</a>
         </form>
+        
+        <form role="form">
+            <h4 class="text-center">Вход</h4>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Введите email">
+                <p class="help-block">Пример строки с подсказкой</p>
+            </div>
+            <div class="form-group">
+                <label for="pass">Пароль</label>
+                <input type="password" class="form-control" id="pass" placeholder="Пароль">
+            </div>
+            <a href="../pinandplay/user_random.html" type="submit" class="btn btn-success btn-md btn-block">Войти!</a>
+        </form>
+        </div>
+        </div>
     </body>
 </html>
