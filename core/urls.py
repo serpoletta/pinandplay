@@ -1,4 +1,7 @@
 from django.conf.urls import url
+from django.contrib import admin
+
+admin.autodiscover()
 
 urlpatterns = [
 
@@ -6,6 +9,7 @@ urlpatterns = [
     url(r'^user/$', 'core.views.user_list', name='user_list'),
     url(r'^user/(\d+)/$', 'core.views.user_profile', name='user_profile'),
     # ^user/(\d+)/edit/$
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
 
     # Доски
     url(r'^board/$', 'core.views.board_list', name='board_list'),

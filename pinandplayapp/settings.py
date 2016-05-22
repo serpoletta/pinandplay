@@ -56,6 +56,7 @@ MIDDLEWARE_CLASSES = (
 # Расширенная модель пользователя
 AUTH_USER_MODEL = 'extuser.ExtUser'
 SITE_ID=1
+LOGIN_REDIRECT_URL = '/'
 
 ROOT_URLCONF = 'pinandplayapp.urls'
 
